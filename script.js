@@ -1,9 +1,18 @@
 const koreanNumbers = [
-  { number: "일", value: 1 }, // Add more numbers up to 100
+  { number: "하나", value: 1 },
+  { number: "둘", value: 2 },
+  { number: "셋", value: 3 },
+  { number: "넷", value: 4 },
+  { number: "다섯", value: 5 },
+  { number: "여섯", value: 6 },
+  { number: "일곱", value: 7 },
+  { number: "여덟", value: 8 },
+  { number: "아홉", value: 9 },
+  { number: "열", value: 10 }, // Add more numbers up to 100
 ];
 
 const englishNumbers = [
-  { number: "하나", value: 1 }, // Add more numbers up to 100
+  { number: 1, value: "하나" }, // Add more numbers up to 100
 ];
 
 let currentMode = "korean"; // Initial mode
