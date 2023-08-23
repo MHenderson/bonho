@@ -212,6 +212,7 @@ const displayElement = document.getElementById("display");
 const guessInput = document.getElementById("guess");
 const submitButton = document.getElementById("submit");
 const switchButton = document.getElementById("switch-mode");
+const resetButton = document.getElementById("reset");
 const scoreElement = document.getElementById("score");
 
 // Function to switch between modes
@@ -240,9 +241,17 @@ function checkGuess() {
   updateDisplay();
 }
 
+// Function to start the game over
+function resetGame() {
+  currentScore = 0;
+  scoreElement.textContent = `Score: ${currentScore}`;
+  updateDisplay();
+}
+
 // Event listeners
 submitButton.addEventListener("click", checkGuess);
 switchButton.addEventListener("click", switchMode);
+resetButton.addEventListener("click", resetGame);
 
 // Initial display update
 updateDisplay();
