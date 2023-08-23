@@ -33,6 +33,12 @@ h1 {
   font-size: 16px;
 }
 
+#reset {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
 #score {
   margin-top: 20px;
   font-size: 18px;
