@@ -15,7 +15,7 @@ let currentLanguage = "korean";
 let currentMode = "number";
 let currentNumber;
 let currentScore = 0;
-let exercises;
+let exercises = createExercises();
 
 const displayElement = document.getElementById("display");
 const guessInput = document.getElementById("guess");
