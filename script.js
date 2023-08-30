@@ -115,6 +115,9 @@ const switchLanguageButton = document.getElementById("switch-language");
 const resetButton = document.getElementById("reset");
 const scoreElement = document.getElementById("score");
 
+switchButton.textContent = "Numbers"
+switchLanguageButton.textContent = "Sino-Korean"
+
 function createExercises(language="korean", mode="number") {
   var x;
   if(language==="korean") {
@@ -141,7 +144,7 @@ function createExercises(language="korean", mode="number") {
 function switchLanguage() {
   currentLanguage = currentLanguage === "korean" ? "sino" : "korean";
   exercises = createExercises(currentLanguage, currentMode);
-  console.log(exercises)
+  switchLanguageButton.textContent = currentLanguage === "korean" ? "Sino-Korean" : "Korean";
   updateDisplay();
 }
 
@@ -149,6 +152,7 @@ function switchLanguage() {
 function switchMode() {
   currentMode = currentMode === "number" ? "word" : "number";
   exercises = createExercises(currentLanguage, currentMode);
+  switchButton.textContent = currentMode === "number" ? "Numbers" : "Words";
   updateDisplay();
 }
 
