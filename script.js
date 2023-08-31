@@ -98,7 +98,7 @@ const numbersArray = [
   { value: 97, korean: "아흔일곱", sino: "구십칠" },
   { value: 98, korean: "아흔여덟", sino: "구십팔" },
   { value: 99, korean: "아흔아홉", sino: "구십구" },
-  { value: 100, korean: "백", sino: "백" }
+  { value: 100, korean: "백", sino: "백" },
 ];
 
 let currentLanguage = "korean";
@@ -115,36 +115,37 @@ const switchLanguageButton = document.getElementById("switch-language");
 const resetButton = document.getElementById("reset");
 const scoreElement = document.getElementById("score");
 
-switchButton.textContent = "Numbers"
-switchLanguageButton.textContent = "Sino-Korean"
+switchButton.textContent = "Numbers";
+switchLanguageButton.textContent = "Sino-Korean";
 
-function createExercises(language="korean", mode="number") {
+function createExercises(language = "korean", mode = "number") {
   var x;
-  if(language==="korean") {
-    if(mode==="number") {
+  if (language === "korean") {
+    if (mode === "number") {
       // korean to number game
-      x = numbersArray.map(d => ({ question: d.korean, answer: d.value}) )
+      x = numbersArray.map((d) => ({ question: d.korean, answer: d.value }));
     } else {
       // number to korean guessing
-      x = numbersArray.map(d => ({ question: d.value, answer: d.korean}) )
+      x = numbersArray.map((d) => ({ question: d.value, answer: d.korean }));
     }
   } else {
-    if(mode==="number") {
+    if (mode === "number") {
       // sino-korean to number game
-      x = numbersArray.map(d => ({ question: d.sino, answer: d.value}) )
+      x = numbersArray.map((d) => ({ question: d.sino, answer: d.value }));
     } else {
       // number to sino-korean guessing
-      x = numbersArray.map(d => ({ question: d.value, answer: d.sino}) )
+      x = numbersArray.map((d) => ({ question: d.value, answer: d.sino }));
     }
   }
-  return(x)
+  return x;
 }
 
 // Function to switch between languages
 function switchLanguage() {
   currentLanguage = currentLanguage === "korean" ? "sino" : "korean";
   exercises = createExercises(currentLanguage, currentMode);
-  switchLanguageButton.textContent = currentLanguage === "korean" ? "Sino-Korean" : "Korean";
+  switchLanguageButton.textContent =
+    currentLanguage === "korean" ? "Sino-Korean" : "Korean";
   updateDisplay();
 }
 
@@ -186,6 +187,12 @@ submitButton.addEventListener("click", checkGuess);
 switchButton.addEventListener("click", switchMode);
 switchLanguageButton.addEventListener("click", switchLanguage);
 resetButton.addEventListener("click", resetGame);
+guessInput.addEventListener("keyup", function (event) {
+  if (event.code === "Enter") {
+    event.preventDefault();
+    checkGuess();
+  }
+});
 
 // Initial display update
 updateDisplay();
