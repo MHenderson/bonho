@@ -1,2 +1,4 @@
-# korean-numbers
-A Korean number guessing game.
+# bonho
+
+A flashcard game for learning Korean numbers.
+
