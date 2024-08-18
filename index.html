@@ -3,24 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" >
   <title>A flashcard game for learning Korean numbers</title>
 </head>
 <body>
-  <h1>번호</h1>
-  <div class="mode-switch">
-    <button id="switch-mode">Switch Mode</button>
-  </div>
-  <div class="language-switch">
-    <button id="switch-language">Switch Language</button>
-  </div>
-  <div class="game-container">
-    <div id="display"></div>
-    <input type="text" id="guess" placeholder="Enter your guess">
-    <button id="submit">Submit</button>
-    <button id="reset">Reset</button>
-    <div id="score">Score: 0</div>
-  </div>
+  <main class="container">
+    <div class="grid">
+      <div>
+        <h1 id="score">Score: 0</h1>
+        <h1 id="display"></h1>
+      </div>
+    </div>
+    <div class="grid">
+      <div>
+        <input type="text" id="guess" placeholder="Enter your guess:">
+      </div>
+      <div>
+        <button id="submit">Submit</button>
+        <button id="reset" type="reset">Reset</button>
+      </div>
+    </div>
+    <div class="grid">
+      <div>
+        <button id="switch-mode">Numbers</button>
+        <button id="switch-language">Sino-Korean</button>
+      </div>
+    </div>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
